@@ -34,3 +34,22 @@
     </script>
 ```
 > ![screen shot 2018-09-17 at 2 25 22 pm](https://user-images.githubusercontent.com/36870689/45648391-b0893980-ba85-11e8-96b4-5cb4ebec59e3.png)
+
+### Object Basics
+- name, cost, count are KEYS - it can be a string too like "name", "cost", "count"
+```
+var obj = {name: "Apple", cost: 1.99, count: 2};
+        console.log(obj.name);
+        console.log(obj.cost);
+
+        for (var key in obj) {
+          console.log(key+ " "+obj[key]);
+        }
+
+        var array = ["A", "B", "C"];
+        
+        for (var key in array) {
+          console.log(key+ " "+array[key]);
+        }
+```
+> ![screen shot 2018-09-18 at 9 44 51 am](https://user-images.githubusercontent.com/36870689/45699599-89834400-bb27-11e8-934e-00c514ea484b.png)
