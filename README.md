@@ -47,9 +47,31 @@ var obj = {name: "Apple", cost: 1.99, count: 2};
         }
 
         var array = ["A", "B", "C"];
-        
+
         for (var key in array) {
           console.log(key+ " "+array[key]);
         }
 ```
 > ![screen shot 2018-09-18 at 9 44 51 am](https://user-images.githubusercontent.com/36870689/45699599-89834400-bb27-11e8-934e-00c514ea484b.png)
+
+### Arrays and Objects
+- We can see in the cart, there is only 1 object (as the first index, which is index 0). When we as for the 2nd index, which is index 1, it will be undefined because there is no 2nd object as 2nd index. 
+```
+    <script>
+       var cart = [];
+
+       var item = {name: "Apple", cost: 1.99, count: 3};
+
+       cart.push(item);
+
+       console.log(cart); // [Object] > 0: Object
+       console.log(cart[0]); // {name: "Apple", cost: 1.99, count: 3}
+       console.log(cart[0].name); //Apple
+       console.log(cart[0].cost); //1.99
+
+       console.log(cart[1]); //undefined
+       console.log(cart[1].name); //uncaught / undefined
+       console.log(cart[0].price); //undefine
+    </script>
+```
+> ![screen shot 2018-09-18 at 10 58 11 am](https://user-images.githubusercontent.com/36870689/45703569-f8659a80-bb31-11e8-81de-ab540d06e4e6.png)
