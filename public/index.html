@@ -11,20 +11,22 @@
   <body>
     <h1>Shoping cart</h1>
     <script>
-       var cart = [];
+       function myFunction(message, count){
+         for (var i = 0; i < count; i++) {
+           console.log(message);
+         }
+       }
 
-       var item = {name: "Apple", cost: 1.99, count: 3};
+       myFunction("Hello World", 1);
+       myFunction("Hello Flowers", 2);
+       myFunction("Hello Beautiful Earth", 5);
+       myFunction("Hello Wonderful Life", 3);
 
-       cart.push(item);
+       function square(num){
+         return num * num;
+       }
 
-       console.log(cart); // [Object] > 0: Object
-       console.log(cart[0]); // {name: "Apple", cost: 1.99, count: 3}
-       console.log(cart[0].name); //Apple
-       console.log(cart[0].cost); //1.99
-
-       console.log(cart[1]); //undefined
-       console.log(cart[1].name); //uncaught / undefined
-       console.log(cart[0].price); //undefine
+       console.log(square(4));
     </script>
     <div id="root"></div>
   </body>

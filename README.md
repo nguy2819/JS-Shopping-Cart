@@ -75,3 +75,30 @@ var obj = {name: "Apple", cost: 1.99, count: 2};
     </script>
 ```
 > ![screen shot 2018-09-18 at 10 58 11 am](https://user-images.githubusercontent.com/36870689/45703569-f8659a80-bb31-11e8-81de-ab540d06e4e6.png)
+
+### Shopping Cart Functions
+- message and count are parameters/ argument variables (so message will be parameter number 1 and count is parameter number 2)
+- Hello World will be value number 1 and 1 will be value number 2 => Say Hello World - 1 time
+- Hello Flowers is value number 1 and 2 is value number 2 => Say Hello Flowers - 2 times
+- Hello Beautiful Earth is value number 1 and 5 is value number 2 => Say Hello Beautiful Earth - 5 times
+```
+    <script>
+       function myFunction(message, count){
+         for (var i = 0; i < count; i++) {
+           console.log(message);
+         }
+       }
+
+       myFunction("Hello World", 1);
+       myFunction("Hello Flowers", 2);
+       myFunction("Hello Beautiful Earth", 5);
+       myFunction("Hello Wonderful Life", 3);
+
+       function square(num){
+         return num * num;
+       }
+
+       console.log(square(4));
+    </script>
+```
+> ![screen shot 2018-09-18 at 1 55 45 pm](https://user-images.githubusercontent.com/36870689/45713032-2c00ee80-bb4b-11e8-8d4f-dd60a95fda17.png)
