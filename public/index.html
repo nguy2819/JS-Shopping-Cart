@@ -6,13 +6,14 @@
     <meta name="theme-color" content="#000000">
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+    <link href="https://fonts.googleapis.com/css?family=Pinyon+Script" rel="stylesheet"> 
+
     <title>Shopping Cart JS</title>
   </head>
   <body>
-    <h1>Shoping cart</h1>
     <div id="root"></div>
 
-    <script>
+    <!-- <script>
         var cart = [];
         var Item =  function(name, price, count) {
             this.name = name
@@ -20,13 +21,21 @@
             this.count = count
         };
 
-        var brush = new Item("Brush", 1.99, 1);
-        // {name: "Brush", price: 1.99, count: 1}
+        function addItemToCart(name, price, count){
+          for (var i in cart){
+            if (cart[i].name === name){
+                cart[i].count += count;
+                return;
+            }
+          }
+          var item = new Item(name, price, count);
+          cart.push(item);
+        }
 
-        cart.push(new Item("Apple", 2.00, 3));
-        cart.push(brush);
+        addItemToCart("Apple", 1.99, 5);
+        addItemToCart("Apple", 1.99, 5);
 
         console.log(cart);
-    </script>
+    </script> -->
   </body>
 </html>

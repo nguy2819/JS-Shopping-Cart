@@ -240,3 +240,51 @@ var obj = {name: "Apple", cost: 1.99, count: 2};
 ```
 > ![screen shot 2018-09-20 at 2 08 04 pm](https://user-images.githubusercontent.com/36870689/45844134-be85c700-bcde-11e8-8d04-5899828dd028.png)
 > ![screen shot 2018-09-20 at 2 08 29 pm](https://user-images.githubusercontent.com/36870689/45844177-d6f5e180-bcde-11e8-9a94-a8733e30f2ad.png)
+
+## Make an AddItemToCart (link between basic JS and ReactJS)
+```
+export default class AddItem extends React.Component{
+    constructor(props){
+        super(props)
+        this.state = {
+            cart: []
+        }
+
+        this.addItemToCart = this.addItemToCart.bind(this);
+    }
+
+    addItemToCart(name, price, count){
+        if(this.state.cart.some(item => item.name === name)){
+            this.setState({cart: this.state.cart.map(
+                cartItem => {
+                    if(cartItem.name === name){
+                        cartItem.count += count;
+                    }
+                    return cartItem;
+                })
+            });
+        }
+        else{
+            this.setState({cart: [...this.state.cart, {name, price, count}]});
+        }
+    }
+
+    render(){
+        return (
+        <div>
+            <h2> Products </h2>
+            <button onClick={() => this.addItemToCart('apple', 5, 1)}>Add Apple</button>
+            <button onClick={() => this.addItemToCart('orange', 10, 1)}>Add orange</button>
+            <div>
+                <h2>Cart</h2>
+                <ul>
+                    {this.state.cart.map((item) => {
+                        return <li key={item.name + '-' + item.price}>{item.name} {item.count} ${item.price * item.count}</li>
+                    })}
+                </ul>
+            </div>
+        </div>
+        );
+    }
+}
+```
