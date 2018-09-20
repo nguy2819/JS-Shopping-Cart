@@ -11,22 +11,21 @@
   <body>
     <h1>Shoping cart</h1>
     <script>
-       function myFunction(message, count){
-         for (var i = 0; i < count; i++) {
-           console.log(message);
-         }
-       }
+      //Scope - determines where a variable or a value is visible
+      var global=10;
+      //var global ="Hello"; //this global variable should be visible throughout entire program
+      function myFunction() {
+        var global ="Hello"; //this variable that we moved from outside function to inside. This variable is inside a codeblock- that will determine the scope of that variable. THe scope is the curly braces {}
+        console.log("Global: "+global);
+      }
+      myFunction();
+      console.log("Global: "+global);
+    </script>
 
-       myFunction("Hello World", 1);
-       myFunction("Hello Flowers", 2);
-       myFunction("Hello Beautiful Earth", 5);
-       myFunction("Hello Wonderful Life", 3);
-
-       function square(num){
-         return num * num;
-       }
-
-       console.log(square(4));
+    <script>
+      // var global = 10;
+      // console.log("Global"+global);
+      // myFunction();
     </script>
     <div id="root"></div>
   </body>
