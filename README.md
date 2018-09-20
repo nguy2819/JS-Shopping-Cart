@@ -218,3 +218,25 @@ var obj = {name: "Apple", cost: 1.99, count: 2};
     </script>
 ```
 > ![screen shot 2018-09-20 at 1 45 41 pm](https://user-images.githubusercontent.com/36870689/45843082-cb54eb80-bcdb-11e8-825a-26ee083abac6.png)
+
+### Shopping Cart: Item and Cart
+```
+    <script>
+        var cart = [];
+        var Item =  function(name, price, count) {
+            this.name = name
+            this.price = price
+            this.count = count
+        };
+
+        var brush = new Item("Brush", 1.99, 1);
+        // {name: "Brush", price: 1.99, count: 1}
+
+        cart.push(new Item("Apple", 2.00, 3));
+        cart.push(brush);
+
+        console.log(cart);
+    </script>
+```
+> ![screen shot 2018-09-20 at 2 08 04 pm](https://user-images.githubusercontent.com/36870689/45844134-be85c700-bcde-11e8-8d04-5899828dd028.png)
+> ![screen shot 2018-09-20 at 2 08 29 pm](https://user-images.githubusercontent.com/36870689/45844177-d6f5e180-bcde-11e8-9a94-a8733e30f2ad.png)

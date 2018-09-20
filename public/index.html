@@ -10,23 +10,23 @@
   </head>
   <body>
     <h1>Shoping cart</h1>
-    <script>
-      //Scope - determines where a variable or a value is visible
-      var global=10;
-      //var global ="Hello"; //this global variable should be visible throughout entire program
-      function myFunction() {
-        var global ="Hello"; //this variable that we moved from outside function to inside. This variable is inside a codeblock- that will determine the scope of that variable. THe scope is the curly braces {}
-        console.log("Global: "+global);
-      }
-      myFunction();
-      console.log("Global: "+global);
-    </script>
+    <div id="root"></div>
 
     <script>
-      // var global = 10;
-      // console.log("Global"+global);
-      // myFunction();
+        var cart = [];
+        var Item =  function(name, price, count) {
+            this.name = name
+            this.price = price
+            this.count = count
+        };
+
+        var brush = new Item("Brush", 1.99, 1);
+        // {name: "Brush", price: 1.99, count: 1}
+
+        cart.push(new Item("Apple", 2.00, 3));
+        cart.push(brush);
+
+        console.log(cart);
     </script>
-    <div id="root"></div>
   </body>
 </html>
