@@ -9,6 +9,7 @@ export default class AddItem extends React.Component{
 
         this.addItemToCart = this.addItemToCart.bind(this);
         this.removeItemFromCart = this.removeItemFromCart.bind(this);
+        this.clearCart = this.clearCart.bind(this);
 
     }
 
@@ -28,7 +29,7 @@ export default class AddItem extends React.Component{
         }
     }
 
-    removeItemFromCart(name, price, count){
+    removeItemFromCart(name){
         if(this.state.cart.some(item=> item.name === name)){
           this.setState({cart: this.state.cart.map(
             cartItem => {
@@ -41,6 +42,10 @@ export default class AddItem extends React.Component{
         }
       }
 
+    clearCart(){
+        this.setState({cart: []})
+    }
+
     render(){
         return (
         <div>
@@ -49,6 +54,7 @@ export default class AddItem extends React.Component{
             <button onClick={() => this.removeItemFromCart('apple', 5, 1)}>Remove Apple</button>
             <button onClick={() => this.addItemToCart('orange', 10, 1)}>Add orange</button>
             <button onClick={() => this.removeItemFromCart('orange', 5, 1)}>Remove Orange</button>
+            <button onClick={() => this.clearCart()}>Clear Your Cart</button>
             <div>
                 <h2>Cart</h2>
                 <ul>
